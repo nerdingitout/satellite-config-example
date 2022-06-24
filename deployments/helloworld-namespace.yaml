@@ -5,3 +5,4 @@ metadata:
   labels:
     name: demo-namespace-1
     razee/watch-resource: lite
+    dummy: test
