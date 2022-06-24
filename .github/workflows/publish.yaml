@@ -1,8 +1,12 @@
 name: Publish Kubernetes Sample
 on:
   push:
-    tags:
-    - 'v[0-9]+\.[0-9]+\.[0-9]+'
+    branches:
+      - '*'
+  workflow_call:
+  pull_request:
+    branches:
+      - $default-branch
 
 jobs:
   # validate_workflow_job:
