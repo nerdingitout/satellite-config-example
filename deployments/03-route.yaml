@@ -1,18 +1,14 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: route.openshift.io/v1
+kind: Route
 metadata:
-  name: helloworld-ingress
-  namespace: helloworld-ns
+  name: helloworld-route
+  namespace: hellworld-ns
   labels:
     razee/watch-resource: lite
 spec:
-  rules:
-  - http:
-      paths:
-      - backend:
-          service:
-            name: helloworld-svc
-            port:
-              number: 8080
-        path: "/helloworld"
-        pathType: Prefix
+  path: "/helloworld"
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: helloworld-svc
