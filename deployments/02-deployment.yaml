@@ -18,6 +18,6 @@ spec:
         app: helloworld-app
     spec:
       containers:
-      - image: icr.io/satellite-config/helloworld-su:dev
+      - image: icr.io/satellite-config/helloworld-su:stage
         name: helloworld-app
         imagePullPolicy: Always
